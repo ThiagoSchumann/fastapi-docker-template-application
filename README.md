@@ -4,6 +4,11 @@
 
 A template API project using Docker, FastAPI, SQLModel, and PostgreSQL.
 
+![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=flat&logo=fastapi)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=flat&logo=postgresql&logoColor=white)
+![SQLModel](https://img.shields.io/badge/SQLModel-2496ED?style=flat&logo=sqlalchemy&logoColor=white)
+
 ## Description
 
 This project is a template for creating robust and scalable APIs with FastAPI, utilizing Docker for containerization and PostgreSQL as the database.
@@ -124,12 +129,5 @@ Developed by [Thiago Schumann](https://github.com/ThiagoSchumann).
 ## Contact
 
 For more information, contact:
-- ![Email](https://img.shields.io/badge/Email-thiagoarturschumann@gmail.com-red?style=flat&logo=gmail&logoColor=white)
+- [![Email](https://img.shields.io/badge/Email-thiagoarturschumann@gmail.com-red?style=flat&logo=gmail&logoColor=white)](maito:thiagoarturschumann@gmail.com)
 - [![LinkedIn](https://img.shields.io/badge/LinkedIn-thiagoschumann-blue?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/thiagoschumann/)
-
-## Technologies
-
-![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=flat&logo=fastapi)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=flat&logo=postgresql&logoColor=white)
-![SQLModel](https://img.shields.io/badge/SQLModel-2496ED?style=flat&logo=sqlalchemy&logoColor=white)

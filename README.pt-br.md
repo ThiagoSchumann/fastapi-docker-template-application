@@ -1,89 +1,94 @@
 ### FastAPI-Docker-Base
 
-A template API project using Docker, FastAPI, SQLModel, and PostgreSQL.
+Um projeto de template de API utilizando Docker, FastAPI, SQLModel e PostgreSQL.
 
-## Description
+![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=flat&logo=fastapi)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=flat&logo=postgresql&logoColor=white)
+![SQLModel](https://img.shields.io/badge/SQLModel-2496ED?style=flat&logo=sqlalchemy&logoColor=white)
 
-This project is a template for creating robust and scalable APIs with FastAPI, utilizing Docker for containerization and PostgreSQL as the database.
+## Descrição
 
-## Setup
+Este projeto é um template para criar APIs robustas e escaláveis com FastAPI, utilizando Docker para contêinerização e PostgreSQL como banco de dados.
 
-### Prerequisites
+## Configuração
+
+### Pré-requisitos
 
 - [Docker](https://www.docker.com/)
 - [Docker Compose](https://docs.docker.com/compose/)
 
-### Installation
+### Instalação
 
-1. Clone the repository:
+1. Clone o repositório:
    ```bash
    git clone https://github.com/ThiagoSchumann/FastAPI-Docker-Base
    cd FastAPI-Docker-Base
    ```
 
-2. Start Docker containers:
+2. Inicie os contêineres Docker:
    ```bash
    docker-compose up -d --build
    ```
 
-## Usage
+## Uso
 
-### Important Commands
+### Comandos Importantes
 
-#### Reset Project
+#### Resetar Projeto
 
-1. Remove migration files:
+1. Remova arquivos de migração:
    ```bash
    rm backend/migrations/versions/*.py
    ```
 
-2. Take down existing containers and volumes:
+2. Derrube os contêineres e volumes existentes:
    ```bash
    docker-compose down -v
    ```
 
-3. Rebuild and start containers in detached mode:
+3. Reconstrua e inicie os contêineres em modo destacado:
    ```bash
    docker-compose up -d --build
    ```
 
-4. Generate a new Alembic migration file:
+4. Gere um novo arquivo de migração Alembic:
    ```bash
    docker-compose exec web alembic revision --autogenerate -m "init"
    ```
 
-5. Include changes in the new migration file:
+5. Inclua as mudanças no novo arquivo de migração:
    ```bash
    import sqlmodel
    ```
 
-6. Apply the latest Alembic migrations:
+6. Aplique as últimas migrações Alembic:
    ```bash
    docker-compose exec web alembic upgrade head
    ```
 
-7. Check container logs:
+7. Verifique os logs do contêiner:
    ```bash
    docker-compose logs web
    ```
 
-### Testing
+### Testes
 
-To test the application, run:
+Para testar a aplicação, execute:
 ```bash
 docker-compose down -v
 docker-compose up -d --build
 docker-compose logs web
 ```
 
-Check tables in psql:
+Verifique as tabelas no psql:
 ```bash
 docker-compose exec db psql --username=postgres --dbname=foo
 \dt
 \q
 ```
 
-## Project Structure
+## Estrutura do Projeto
 
 ```plaintext
 .
@@ -105,29 +110,22 @@ docker-compose exec db psql --username=postgres --dbname=foo
 └── Dockerfile
 ```
 
-- **backend/app**: Main application files (entry point, data models, database configuration, and CRUD operations).
-- **backend/tests**: Automated tests.
-- **backend/migrations**: Alembic migrations.
-- **docker-compose.yml**: Docker Compose configuration.
-- **Dockerfile**: Docker configuration.
+- **backend/app**: Arquivos principais da aplicação (ponto de entrada, modelos de dados, configuração do banco de dados e operações CRUD).
+- **backend/tests**: Testes automatizados.
+- **backend/migrations**: Migrações Alembic.
+- **docker-compose.yml**: Configuração do Docker Compose.
+- **Dockerfile**: Configuração do Docker.
 
-## License
+## Licença
 
-This project is licensed under the terms of the [MIT License](LICENSE).
+Este projeto está licenciado sob os termos da [MIT License](LICENSE).
 
-## Author
+## Autor
 
-Developed by [Thiago Schumann](https://github.com/ThiagoSchumann).
+Desenvolvido por [Thiago Schumann](https://github.com/ThiagoSchumann).
 
-## Contact
+## Contato
 
-For more information, contact:
-- ![Email](https://img.shields.io/badge/Email-thiagoarturschumann@gmail.com-red?style=flat&logo=gmail&logoColor=white)
+Para mais informações, entre em contato:
+- [![Email](https://img.shields.io/badge/Email-thiagoarturschumann@gmail.com-red?style=flat&logo=gmail&logoColor=white)](mailto:thiagoarturschumann@gmail.com)
 - [![LinkedIn](https://img.shields.io/badge/LinkedIn-thiagoschumann-blue?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/thiagoschumann/)
-
-## Technologies
-
-![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=flat&logo=fastapi)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=flat&logo=postgresql&logoColor=white)
-![SQLModel](https://img.shields.io/badge/SQLModel-2496ED?style=flat&logo=sqlalchemy&logoColor=white)
