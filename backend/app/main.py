@@ -1,9 +1,18 @@
 # backend/app/main.py
 
+from contextlib import asynccontextmanager
 from fastapi import FastAPI
-from .db.session import init_db
-from .api.v1.endpoints import users, items
+from app.db import init_db
+from app.api.v1.endpoints import users, items
 
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Executa antes da aplicação começar a receber requisições
+    await init_db()
+    yield
+    # Executa após a aplicação parar de receber requisições (se necessário, adicione lógica de limpeza aqui)
+
+# Cria a aplicação FastAPI e passa a função lifespan
 app = FastAPI(
     title="Template Criação de APIs",
     description="Esta é a descrição da minha API.",
@@ -17,13 +26,9 @@ app = FastAPI(
         "name": "MIT",
         "url": "https://opensource.org/licenses/MIT",
     },
+    lifespan=lifespan  # Configura o lifespan para gerenciar o ciclo de vida
 )
 
-
+# Inclui os roteadores dos endpoints
 app.include_router(users.router)
 app.include_router(items.router)
-
-
-@app.on_event("startup")
-async def on_startup():
-    await init_db()
