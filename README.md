@@ -41,7 +41,7 @@ This project is a template for creating robust and scalable APIs with FastAPI, u
 
 1. Remove migration files:
    ```bash
-   rm backend/migrations/versions/*.py
+   rm src/migrations/versions/*.py
    ```
 
 2. Take down existing containers and volumes:
@@ -94,7 +94,7 @@ docker-compose exec db psql --username=postgres --dbname=foo
 
 ```plaintext
 .
-├── backend
+├── src
 │   ├── app
 │   │   ├── main.py
 │   │   ├── models.py
@@ -112,9 +112,9 @@ docker-compose exec db psql --username=postgres --dbname=foo
 └── Dockerfile
 ```
 
-- **backend/app**: Main application files (entry point, data models, database configuration, and CRUD operations).
-- **backend/tests**: Automated tests.
-- **backend/migrations**: Alembic migrations.
+- **src/app**: Main application files (entry point, data models, database configuration, and CRUD operations).
+- **src/tests**: Automated tests.
+- **src/migrations**: Alembic migrations.
 - **docker-compose.yml**: Docker Compose configuration.
 - **Dockerfile**: Docker configuration.
 
