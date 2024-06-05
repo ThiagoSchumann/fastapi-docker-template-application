@@ -1,6 +1,6 @@
 [Leia em Português](README.pt-br.md)
 
-### FastAPI-Docker-Base
+### fastapi-docker-template-application
 
 A template API project using Docker, FastAPI, SQLModel, and PostgreSQL.
 
@@ -23,6 +23,7 @@ This project is a template for creating robust and scalable APIs with FastAPI, u
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/ThiagoSchumann/FastAPI-Docker-Base
    cd FastAPI-Docker-Base
@@ -40,31 +41,37 @@ This project is a template for creating robust and scalable APIs with FastAPI, u
 #### Reset Project
 
 1. Remove migration files:
+
    ```bash
    rm src/migrations/versions/*.py
    ```
 
 2. Take down existing containers and volumes:
+
    ```bash
    docker-compose down -v
    ```
 
 3. Rebuild and start containers in detached mode:
+
    ```bash
    docker-compose up -d --build
    ```
 
 4. Generate a new Alembic migration file:
+
    ```bash
    docker-compose exec web alembic revision --autogenerate -m "init"
    ```
 
 5. Include changes in the new migration file:
+
    ```bash
    import sqlmodel
    ```
 
 6. Apply the latest Alembic migrations:
+
    ```bash
    docker-compose exec web alembic upgrade head
    ```
@@ -77,6 +84,7 @@ This project is a template for creating robust and scalable APIs with FastAPI, u
 ### Testing
 
 To test the application, run:
+
 ```bash
 docker-compose down -v
 docker-compose up -d --build
@@ -84,6 +92,7 @@ docker-compose logs web
 ```
 
 Check tables in psql:
+
 ```bash
 docker-compose exec db psql --username=postgres --dbname=foo
 \dt
@@ -129,5 +138,6 @@ Developed by [Thiago Schumann](https://github.com/ThiagoSchumann).
 ## Contact
 
 For more information, contact:
+
 - [![Email](https://img.shields.io/badge/Email-thiagoarturschumann@gmail.com-red?style=flat&logo=gmail&logoColor=white)](maito:thiagoarturschumann@gmail.com)
 - [![LinkedIn](https://img.shields.io/badge/LinkedIn-thiagoschumann-blue?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/thiagoschumann/)
